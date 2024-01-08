@@ -1,0 +1,63 @@
+.content {
+  position: fixed;
+  color: black;
+  font-size: 85px;
+  line-height: 113px;
+  bottom: 0;
+  left: 0;
+  z-index: 8;
+  width: 100vw;
+}
+.about {
+  background-color: rgb(221, 245, 252);
+  color: rgb(0, 0, 0);
+  animation: 0.3s expandIn ease-in-out;
+  height: fit-content;
+}
+.projects {
+  background-color: rgb(175, 214, 226);
+  color: rgb(0, 0, 0);
+  animation: 0.3s expandIn ease-in-out;
+  height: fit-content;
+}
+.redirect {
+  background-color: rgb(128, 180, 196);
+  animation: 0.3s expandIn ease-in-out;
+  left: 30vw;
+  height: fit-content;
+}
+.contact {
+  background-color: rgb(106, 156, 171);
+  animation: 0.3s expandIn ease-in-out;
+  height: fit-content;
+}
+.marquee {
+  background-color: rgb(171, 239, 25);
+  color: rgb(165, 153, 148);
+  animation: 0.3s expandIn ease-in-out;
+  height: fit-content;
+  position: absolute;
+  z-index: -10;
+  bottom: 0;
+  left: 0;
+  /* font-size: 36px; */
+  padding-left: 100px;
+}
+@keyframes expandIn {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  100% {
+    height: fit-content;
+    width: 100vw;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .content {
+    width: 100vw;
+    font-size: 40px;
+    line-height: 46px;
+    overflow-x: scroll;
+  }
+}
