@@ -15,12 +15,12 @@ window.addEventListener("resize", () => {
 });
 
 canvas.addEventListener("mousedown", (e) => {
-  drawing = true;
   ctx.beginPath();
   ctx.moveTo(e.offsetX, e.offsetY);
 });
 
 canvas.addEventListener("mousemove", (e) => {
+  drawing = true;
   if (drawing) {
     if (useImage) {
       ctx.drawImage(img, e.offsetX - img.width / 2, e.offsetY - img.height / 2);
