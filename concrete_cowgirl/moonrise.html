@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="carrier/style.css">
+    <title>Concrete Cowgirl</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+<!--spur to activate gray hat popup-->
+<!--MOONRISE START-->
+
+<div id="moonrise" class="fade-in">
+    <p id="MoonTypeText"><br> <br>The Cowgirl rises with the moon, ready to spend the night lurking in the shadows</p>
+    <div id="moon">
+    <pre>
+        <a id="rising-moon" style=" text-decoration: none; color: rgba(255, 255, 255, 0.65); text-shadow: 0px 0px 20px white, -20px 20px 40px white;">
+
+            +   __.,:*:*,                       #                   *                                           $
+    o   *    .-=.__*((((*))),       +
+                   '-((æ æ))*)),            *           +                     .
+        |              \ = /(((((,                                                              *
+      - π -             )-()))*))),
+  +     |              /'    \(((((*    "                       @                               ||    
+            +        //(_|_)\\){+))),
+      @              \\ )%(((*(((((*)              +                                .
+                      \(/ /  /))))*))(                                                                              #
+                .      '\ \ */((( ))('      o
+ "                        \ \ )) (*()'
+                           \  \(((')'                       *                   o                   ''                                         +
+        *                  |` /))*) `          {*
+    .                     /   ))-))`
+         _.          __.-`   ((()`                                  ,                                                   ø
+              .__.~--`   __.-(*
+                `~--~``~"*                                                         *                                                *
+         +                          .          |
+                                             - π -
+                    *          =               |                    ,                                   *}
+
+        </a>
+    </pre>
+    </div>
+</div><!--MOONRISE END-->
+<!--BREAKFAST START-->
+<div id="breakfast-wrap" class="hidden">
+<div id="breakfast">
+        A cup of black coffee, a book of <a href="poems.html" style="color: rgba(255, 255, 255, 0.4);" target="_blank">poems</a>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        And a couple of <a href="carrier/cowgirlmanifesto.txt" style="color: rgba(255, 255, 255, 0.4);" target="_blank">manifestos</a> to wash it down
+        <br>
+        <br>
+        <br>
+        <br>
+
+        A glitch, a metaphor, a lab grown rice cake with peanut butter to match, half ate
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <span class="inline">It's still crunchy so it'll do, plus the rations have been getting smaller and</span> <span class="inline" id="smaller" style="color: rgba(255, 255, 255, 0.4); text-decoration: underline;">smaller</span>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        One day they'll be so small that they're dished out via <a href="part-one.html" style="color: rgba(255, 255, 255, 0.4);">micro-micro-chips</a>
+
+</div>
+</div>
+<script>
+    const risingMoon = document.getElementById("rising-moon");
+    const eatBreakfast = document.getElementById("breakfast-wrap");
+    
+    //enter breakfast, exit moontype
+
+    //const coffee = document.getElementById("coffee");
+    //const poems = document.getElementById("poems");
+    //const glitch = document.getElementById("glitch");
+    //const crunchy = document.getElementById("crunchy");
+    //const chip = document.getElementById("chip");
+
+    risingMoon.addEventListener("click", () => {
+        eatBreakfast.style.animation = "4s regFade linear";
+        eatBreakfast.className = "";
+        eatBreakfast.style.zIndex = "23";
+
+    });
+</script>
+<script src="smaller.js"></script>
+</body>
+</html>

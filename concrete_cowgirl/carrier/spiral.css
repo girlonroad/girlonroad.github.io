@@ -1,0 +1,124 @@
+body {
+    background-color: blue;
+    color: white;
+
+}
+#spiral-wrapper {
+    width: 80vw;
+    height: 100vh;
+    text-align: center;
+    position: absolute;
+    left: -30vw;
+    cursor: pointer;
+    transform: rotateX(290deg) rotateY(340deg);
+}
+.spiral-fall1 {
+    position: absolute;
+    z-index: 1;
+    width: 600px;
+    height: 600px;
+    animation: 200s rotate linear infinite;
+    scrollbar-width: none;
+}
+.spiral-fall2 {
+    position: absolute;
+    z-index: 2;
+    margin: 25px;
+    width: 550px;
+    height: 550px;
+    animation: 200s rotate reverse infinite;
+    scrollbar-width: none;
+}
+.spiral-fall3 {
+    position: absolute;
+    z-index: 3;
+    margin: 75px;
+    width: 450px;
+    height: 450px;
+    animation: 200s rotate linear infinite;
+    scrollbar-width: none;
+}
+.spiral-fall4 {
+    position: absolute;
+    z-index: 4;
+    margin: 112px;
+    width: 375px;
+    height: 375px;
+    animation: 200s rotate linear infinite;
+    scrollbar-width: none;
+}
+.spiral-fall5 {
+    position: absolute;
+    z-index: 5;
+    margin: 150px;
+    width: 300px;
+    height: 300px;
+    animation: 200s rotate linear infinite;
+    scrollbar-width: none;
+}
+.spiral-fall6 {
+    position: absolute;
+    z-index: 6;
+    margin: 250px;
+    width: 100px;
+    height: 100px;
+    animation: 200s rotate linear infinite;
+    scrollbar-width: none;
+}
+.scrollbar {
+    scrollbar-width: none;
+}
+.scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.fade-in {
+    animation: 6s regFade linear;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes regFade {
+    0% {
+        opacity: 0;
+        
+    }
+    100% {
+        opacity: 1;
+    
+    }
+}
+@-moz-keyframes regFade {
+    0% {
+        opacity: 0;
+      
+    }
+
+    100% {
+        opacity: 1;
+
+    }
+}
+@-webkit-keyframes regFade {
+    0% {
+        opacity: 0;
+
+    }
+    100% {
+        opacity: 1;
+
+    }
+}
