@@ -1,0 +1,188 @@
+<!DOCTYPE html> <!--I actually use a html boiler plate here (by sidthesloth), an
+        extension downloaded through VScode. 
+        It means I don't forget certain things, 
+        like internet explorer compatiability etc, and it selects language, character, viewport
+        sizing-->
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/style.css"> <!--calling the external stylesheet, usually i have funky
+                names for my external script and stylesheets but this time I kept it simple in line 
+                with the dirtstyle ethos of simplicity.-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--internet explorer compatability-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--viewport scaling, I keep this pretty standard
+                for responsiveness to mobile and various browsers-->
+    <title>𝕕𝕚𝕣𝕥𝓈𝓉𝓎𝓁𝑒</title>
+</head>
+<body>
+<header alt="Dirt Style website title where the letters are changed at random">
+    <div id="header-wrap"> <!--this is where the dirtstyle header is contained. Alt text here to have it read clearly to those using screen readers -->
+        <span id="one">d</span><span id="two">i</span><span id="three">r</span><span id="four">t</span>
+        <span id="five">s</span><span id="six">t</span><span id="seven">y</span><span id="eight">l</span><span id="nine">e</span>
+    </div>
+    <div id="toggle-wrap"> <!--containing the buttons to easily move them around the page-->
+        <button id="info-toggle">?</button><br><br> <!--calls the function in popup.js to increase the z-index and "hidden" class from the popup element-->
+  
+        <a id="audio-on" onclick="playAudio()"><button class="audio-toggle">on</button></a> |
+        <a id="audio-off" onclick="pauseAudio()"><button class="audio-toggle">off</button></a> 
+        
+    </div>
+    <audio id="webpage_audio" src="dirtstyle_webpage_audio.mp3"></audio> <!--the audio in question, toggling play/pause via JS event listeners-->
+</header>
+
+
+<!--begin poem-->
+<div id="outer-wrap" class="scrollbar"> <!--outer wrapper, in case i needed to style the poem within the body-->
+<div class="container"><!--this wrap has the break-word overflow applied, isn't usally used in the browser, but allows it to be viewed as a 'concrete' poem on the mobile-->
+        <span class="person" id="ione">I</span><!--you can see I've organised different words into six types of text based on the word class. This allows me to apply stylings to groups of words-->
+        <span class="else">wanna</span> <!--these 'else' words only have a class as they are not being run through the JS function to change words-->
+        <span class="action" id="be">be</span>
+        <span class="position" id="left">left</span><!--the position, describe, action, persona and object elements have an individual id tag as well. This allows me to add the JS function which selects a new word from the 
+        corresponding string for its word class. I've then used the individual id to time each element's transitions-->
+        <span class="position" id="behind">behind</span>
+
+        <span class="person" id="itwo">I</span>
+        <span class="else">wanna be so</span>
+        <span class="describe" id="fartwo">far</span>
+        <span class="else">behind that I can't even</span>
+        <span class="action" id="chase">chase</span> 
+        <span class="else">my</span>
+        <span class="object" id="tail">tail</span>
+</div>
+<div class="container"> <!--using multiple containers to separate each line of the poem-->
+        <span class="person" id="ithree">I</span>
+        <span class="else">wanna be so </span>
+        <span class="position" id="sofar">far behind</span>
+        <span class="person">that I'm</span>
+        <span class="position">in a</span>
+        <span class="describe" id="ten">ten</span>
+        <span class="object" id="car">car</span>
+        <span class="object" id="pile">pile</span>
+        <span class="position" id="up">up</span>
+        <span class="person">before I</span>
+        <span class="action" id="reach">reach</span>
+        <span class="person">your</span>
+        <span class="object" id="bumper">bumper</span>
+</div>
+<div class="container">
+        <span class="person" id="ifour">I</span>
+        <span class="else">wanna be so far </span>
+        <span class="position">behind</span>
+        <span class="else">that my</span>
+        <span class="object" id="house">house</span>
+        <span class="else">is</span>
+        <span class="action" id="made">made </span>
+        <span class="else">out of</span>
+        <span class="object" id="horsehair">horse hair</span>
+        <span class="person">and my</span>
+        <span class="object" id="boots">boots</span>
+        <span class="else">are</span>
+        <span class="action" id="sewn">sewn</span>
+        <span class="else">in</span>
+        <span class="object" id="wax">wax</span>
+</div>
+<div class="container">
+
+        <span class="person" id="ifive">I</span>
+        <span class="else">wanna</span>
+        <span class="else">be so far behind that</span>
+        <span class="position">there's</span>
+        <span class="describe">no</span>
+        <span class="describe" id="record">record</span>
+        <span class="person">of me</span>
+        <span class="else">on a</span>
+        <span class="describe" id="soft">soft</span>
+        <span class="object" id="drive">drive</span>
+        <span class="else">or a</span>
+        <span class="describe" id="hard">hard</span>
+        <span class="action" id="drivetwo">drive</span>
+        
+</div>
+<div class="container">
+        <span class="person" id="isix">I</span>
+        <span class="else">wanna</span>
+        <span class="action" id="drivethree">drive</span>
+        <span class="else">so far back my</span>
+        <span class="object" id="wheels">wheels</span>
+        <span class="else">turn to squares</span>
+        <span class="person">and I'm</span>
+        <span class="position" id="stuck">stuck</span>
+        <span class="else">in a marsh</span>
+</div>
+<div class="container">
+        <span class="else">And the </span>
+        <span class="else">marsh</span>
+        <span class="else">doesn't</span>
+        <span class="action" id="move">move</span>
+        <span class="person">for me</span>
+        <span class="else">I'm so far</span>
+        <span class="position" id="behindtwo">behind</span>
+        <span class="else">I can't even</span>
+        <span class="action" id="sos">SOS</span>
+</div>
+<div class="container">
+        <span class="else">And the</span>
+        <span class="object" id="hills">hills</span>
+        <span class="else">start looking</span>
+        <span class="else">like</span>
+        <span>cliffs</span>
+        <span class="else">of</span>
+        <span class="describe" id="raw">raw</span>
+        <span>clay</span>
+        <span class="person">And then they're</span>
+        <span class="action" id="caving">caving</span>
+        <span class="position" id="in">in</span>
+</div>
+<div class="container">
+        <span class="else">And I'm</span>
+        <span class="describe" id="covered">covered</span>
+        <span class="else">in</span>
+        <span class="object" id="dirt">dirt</span>
+        <span class="else">And there's</span>
+        <span class="person">no one</span>
+        <span class="else">to</span>
+        <span class="action" id="call">call</span>
+</div>
+<div class="container">
+        <span>Cause I'm so</span>
+        <span class="position" id="far">far</span>
+        <span class="describe" id="behindthree">behind</span>
+        <span>And there is</span>
+        <span class="describe" id="no">no</span>
+        <span class="action" id="upgrade">upgrade</span>
+</div>
+</div>
+<!--the info popup-->
+<div id="info-popup" class="hidden"> <!--the hidden class which is removed in the JS function to reveal and hide the popup-->
+    <div>
+      <button style="background-color: black; color: white;" id="x">X</button> <!--this button is used to close the popup, through decreasing the zindex and adding the hidden class back to the popup element-->
+      <div class="wrapper"><!--to add padding to the text within the popup container.-->
+        <span class="action">I'm going pastoral.</span><span class="person">Not in the Shakespearean sense, in the sense that</span><span class="describe"> I don't want to upgrade.<span class="else"> I want to be left behind.</span>
+        <br><!--separate the lines above into different classes, to provide interest in teh CSS nad reflect the styling of the page itself.-->
+        <br>
+        <I>Dirtstyle</I> is intended as a single page net.art piece to be viewed by 
+        the user as the text ‘decays’ before their eyes. This code is heavily inspired 
+        by Daniel Temkin's esoteric language 'Entropy' - though it is a pared back emulation.<!--the ideas behind the project heavily influneced by Daniel Temkin's original
+        esolang, so have included a reference to him for anybody curious about creative coding who would like to explore esolangs further-->
+      </div>
+    </div>
+  </div>
+
+    <script src="js/script.js"></script><!--calling the script with the "decay" functions for the word classes and the header, it also contains the audio toggle event listeners
+and the popup function-->
+<script>
+//this script allows the user to click buttons using the enter key, fo rsome reason I had to include it here otherwise it 
+//caused the decay functions to error
+keyControl.addEventListener("keypress", function(event) {
+    if (event.key === "event") {
+        enter.preventDefault();
+        
+    audioOn.click();
+    audioOff.click();
+    info.click();
+    x.click();
+    }
+});
+</script>
+</body>
+</html>

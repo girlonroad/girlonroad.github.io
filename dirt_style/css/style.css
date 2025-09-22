@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box; /*has th epadding and margins included in the width and height of each element, this solved the issue of element overhang in the popup element*/
+  padding: 0;
+  margin: 0;
+  overflow: scroll; /*the words overhang as they change, so the scroll is necessary incase th eword lengths change and the lines go beyond th eviewport*/
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column; /*using flex direction to stack th eheader, and subsequent poem elements on top of each other in a column*/
+  padding: 10px;
+}
+header {
+  height: fit-content; /*responsive to text height which is specified in em, and mobile view responsiveness as it isn't a constrained pixel height*/
+  width: 100vw;
+  padding-bottom: 3vh; /*you'll notice I use view height and view width units for the height and width of elements. I usual avoid pixels as this is in most cases
+    an efficient way to build responsive websites. It fits in with my workflow easily*/
+}
+button {
+  /*button styling*/
+  padding: 2px 10px;
+}
+#header-wrap {
+  color: white;
+  font-size: 4em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+}
+#toggle-wrap {
+  position: fixed;
+  z-index: 10; /*aloows the button so sit at the top through the z-index. Using the fixed posiiton means that th ebuttons will always be visible even when the userr resizes their browser window*/
+  top: 20px;
+  right: 20px;
+  text-align: right;
+  font-size: 0.8em;
+}
+.scrollbar {
+  scrollbar-width: 0px;
+}
+.scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.container {
+  width: 100vw;
+  display: flex; /*displays each line of the poem stacked on top of each other*/
+}
+.container.space-around {
+  justify-content: space-around;
+}
+.container.space-between {
+  justify-content: space-between;
+} /* these two stylings have each text span aligned from teh center, rather than aligned to the bottom. This was for the aesthetic. originally the text was displayed on a single line and look too clean*/
+.container::-webkit-scrollbar {
+  display: none;
+}
+.object {
+  font-size: 1.3em; /*em units used for responsiveness*/
+  font-family: Verdana, Geneva, Tahoma, sans-serif; /*I've used standard web fonts to fit with the dirtstyle aesthetic, and to allow for cross-browser compatibility*/
+}
+.position {
+  font-size: 1.5em;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.describe {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 1.6em;
+}
+.action {
+  font-size: 1.7em;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-style: bold;
+}
+.person {
+  font-size: 1.2em;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-right: 3px; /*contains a margin as there wasn't enough spacing between it and other elements, particularly with the word 'I'.*/
+}
+.else {
+  font-size: 0.9em;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+/*info-popup css here*/
+#info-popup {
+  position: absolute; /*allows the z-index function*/
+  background: #000000;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  margin: 10vh 20vw; /*margin in vh and vw units to match the width and height and have the element centered*/
+  padding: 10px 30px;
+  width: 60vw;
+  height: 80vh;
+  color: rgba(255, 255, 255, 0.89);
+  z-index: -10;
+}
+.wrapper {
+  position: relative; /*positioned within the info-popup tag*/
+  width: 50vw;
+  margin: 0 auto; /*centered within the popup element*/
+  padding: 50px;
+  overflow-wrap: break-word;
+}
+#x {
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer; /* the cursor signals to the user they can click the X*/
+  user-select: none; /*user is unable to select or copy this element, so it functions less as a character and more as an icon*/
+  font-size: 30px;
+  float: right; /*positioned to the top-right of the info-popup*/
+}
+.hidden {
+  display: none; /*this is th eclass which is affected by the popup X toggle, and info button*/
+}
+#audio-on,
+#audio-off,
+#info-toggle {
+  cursor: pointer; /*adds the cursor pointer to the info and audio elements to signla to th euser they can click the element for a function*/
+}
+@media (max-width: 500px) {
+  /*mobile responsiveness*/
+  body {
+    font-size: 0.8em;
+    padding: 5px;
+  }
+  #info-popup {
+    width: 80%; /*increased from 60vw to 80%*/
+    height: 80%;
+    font-size: 10px; /*font-size decreased for mobile viewing*/
+    padding: 20px; /*padding decreased for mobil viewing*/
+  }
+  .wrapper {
+    padding: 0;
+  }
+}
