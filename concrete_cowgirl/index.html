@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concrete Cowgirl</title>
+<style>
+    body {
+        background-color: rgb(64, 76, 74);
+        background-image: linear-gradient(rgb(43, 51, 50), rgb(75, 72, 67), rgb(34, 23, 19));
+        background-attachment: fixed;
+        height: 100vh;
+        overflow-y: scroll;
+        text-align: center;
+    }
+.type {
+    width: 100vw;
+    font-size: 2.5em;
+    text-shadow: -90px 30px 70px rgb(177, 167, 157), -10px 10px 100px rgb(168, 168, 168);
+    color: rgb(28, 28, 28);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(146, 146, 146);
+}
+#menu-wrap {
+    width: 300px;
+    height: 300px;
+    transform: rotateX(40deg) rotateY(-10deg);
+    animation: 4s fadein linear;
+    margin: 0 auto;
+}
+#menu-wrap:hover {
+    transition: 2s;
+    transform: rotateX(-10deg) rotateY(-10deg);
+}
+#menu {
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 3px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.text1 {
+    font-family: cursive;
+    font-size: 1.6em;
+}
+.text2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.3em;
+}
+.text3 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.3em;
+}
+.text4 {
+    font-family: fantasy;
+    font-size: 1.6em;
+}
+.text5 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1em;
+}
+a {
+    color: rgb(167, 167, 167);
+    text-shadow: 3px;
+    text-decoration: none;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(34, 34, 34);
+    text-shadow: 5px -10px 50px rgb(179, 170, 160), -20px 10px 100px rgb(218, 218, 218);
+}
+#spur {
+    position: absolute;
+    z-index: -10;
+    font-size: 10em;
+}
+@keyframes rotate {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    50% {
+        transform: rotateZ(180deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+@media only screen and (max-width:400px) {
+    pre {
+        font-size: 0.7em;
+        -webkit-text-stroke-width: 0px;
+        -webkit-text-stroke-color: none;
+    }
+    #menu-wrap {
+        transform: none;
+    }
+}
+@keyframes fadein {
+    0% {
+        opacity: 0;
+        
+    }
+    50% {
+        opacity: 0;
+        
+    }
+    80% {
+        opacity: 0;
+        
+    }
+    100% {
+        opacity: 1;
+        
+    }
+}
+</style>
+</head>
+<body>
+    <span id="AboutDevTypeText" class="type"></span>
+<br>
+<br>
+<div id="menu-wrap">
+    <div id="menu">
+        <span class="item">
+            <a href="preface.html" class="text4" id="preface">preface</a>
+        </span>
+        <span class="item">
+            <a href="moonrise.html" class="text1" id="moonrise">moonrise</a>
+        </span>
+        <span class="item">
+            <a href="part-one.html" class="text3" id="partone">partone</a>
+        </span>
+            <span class="item">
+                <a href="poems.html" class="text2" id="poems">poems</a>
+            </span>
+            <span class="item">
+                <a href="carrier/cowgirlmanifesto.txt" class="text5" id="manifesto">manifesto</a>
+            </span>
+            <span class="item">
+                <a href="rewild.html" class="text2" id="rewild">rewild</a>
+            </span>
+            <span class="item">
+                <a href="nomxnsland.html" class="text5" id="nomxnsland">nomxnsland</a>
+            </span>
+            <span class="item">
+                <a href="visions.html" class="text4" id="visions">visions</a>
+            </span>
+            <span class="item">
+                <a href="starkey.html" class="text3" id="starkey">starkey</a>
+            </span>
+            <span class="item">
+                <a href="rodeo.html" class="text1" id="rodeo">rodeo</a>
+            </span>
+            <span class="item">
+                <a href="water.html" class="text4" id="water">water</a>
+            </span>
+            <span class="item">
+                <a href="fire.html" class="text3" id="fire">fire</a>
+            </span>
+            <span class="item">
+                <a href="whip.html" class="text5" id="whip">whip</a>
+            </span>
+            <span class="item">
+                <a href="corral.html" class="text1" id="corral">corral</a>
+            </span>
+            <span class="item">
+                <a href="part-four.html" class="text3" id="partfour">partfour</a>
+            </span>
+    </div> 
+</div>
+<script>
+var data = [
+    {
+      AboutDevTypeText: "<span>CONCRETE COWGIRL</span>"
+}
+  ];
+  
+  var allElements = document.getElementsByClassName("type");
+  for (var k = 0; k < allElements.length; k++) {
+    var currentElementId = allElements[k].id;
+    var currentElementIdContent = data[0][currentElementId];
+    var element = document.getElementById(currentElementId);
+    var devTypeText = currentElementIdContent;
+  
+    // type code
+    var i = 0, isTag, text;
+    (function type() {
+      text = devTypeText.slice(0, ++i);
+      if (text === devTypeText) return;
+      element.innerHTML = text + `<span class='blinker'>&#32;</span>`;
+      var char = text.slice(-1);
+      if (char === "<") isTag = true;
+      if (char === ">") isTag = false;
+      if (isTag) return type();
+      setTimeout(type, 150);
+    })();
+  };
+
+</script>
+</body>
+</html>
