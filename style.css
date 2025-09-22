@@ -43,6 +43,7 @@ a {
 }
 a:hover {
   background-color: yellow;
+  text-decoration: none;
 }
 footer {
   text-align: right;
