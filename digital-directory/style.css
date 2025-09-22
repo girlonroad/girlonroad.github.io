@@ -1,0 +1,659 @@
+@font-face { 
+    font-family: Corona; 
+    src: url('Fonts/Corona W01 Roman.ttf'); 
+} 
+header {
+    background: rgba(230,230,230,0);
+    color: #0f45c9;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    padding: 10px;
+    font-family: 'arial', regular;
+}
+.digital-directory{
+    height: 30px;
+    padding: 10px;
+}
+a {
+    text-decoration: none;
+    color: #0f45c9;
+}
+a:hover {
+    cursor: crosshair;
+}
+body {
+    background: #82f74f;
+    font-family:'corona', roman regular;
+    height: 100%;
+    width: 100%;
+    color: #0f45c9;
+    letter-spacing: 3px;
+    margin: 0 auto;
+}
+.icon {
+    max-width: 130px;
+    position: relative;
+} 
+.zoom:hover {
+    transform: scale(1.02);
+    cursor: crosshair;
+}
+.earthday {
+    position: fixed;
+    animation: earthday 60s linear;
+    animation-iteration-count: infinite;
+}
+.earthdaylive {
+    max-height: 100px;
+}
+.earthday .earthdaytext {
+    visibility: hidden;
+    width: 160px;
+    background-color: rgba(170,170,170,1);
+    color: #0f45c9;
+    margin: 0 auto;
+    padding: 2px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 10px;
+    left: 110%;
+    overflow: visible;
+    /*Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.earthday:hover .earthdaytext {
+    visibility: visible;
+}
+.bunkerstream {
+    position: fixed;
+    animation: bunkerstream 45s linear;
+    animation-iteration-count: infinite;
+    z-index: 1;
+}
+.bunkerstream .bunkerstreamtext {
+    visibility: hidden;
+    width: 160px;
+    background-color: rgba(170,170,170,1);
+    color: #0f45c9;
+    margin: 0 auto;
+    padding: 2px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 10px;
+    left: 110%;
+    overflow: visible;
+    /*Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.bunkerstream:hover .bunkerstreamtext {
+    visibility: visible;
+}
+.earthwindmap {
+    position: fixed;
+    animation: earthwindmap 35s linear;
+    animation-iteration-count: infinite;
+}
+.earthwindmap .earthwindmaptext {
+visibility: hidden;
+    width: 160px;
+    background-color: rgba(170,170,170,1);
+    color: #0f45c9;
+    margin: 0 auto;
+    padding: 2px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 10px;
+    left: 110%;
+    overflow: visible;
+    /*Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.clubquarantaene {
+    position: fixed;
+    animation: clubquarantaene 30s linear;
+    animation-iteration-count: infinite;
+    z-index: 1;
+}
+.clubquarantaene .clubquarantaenetext {
+    visibility: hidden;
+    width: 160px;
+    background-color: rgba(170,170,170,1);
+    color: #0f45c9;
+    margin: 0 auto;
+    padding: 2px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 10px;
+    left: 110%;
+    overflow: visible;
+    /*Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.clubquarantaene:hover .clubquarantaenetext {
+    visibility: visible;
+}
+.binoculars {
+    position: fixed;
+    animation: binoculars 40s linear;
+    animation-iteration-count: infinite;
+}
+.binoculars .binocularstext {
+    visibility: hidden;
+    width: 160px;
+    background-color: rgba(170,170,170,1);
+    color: #0f45c9;
+    margin: 0 auto;
+    padding: 2px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 10px;
+    left: 110%;
+    overflow: visible;
+    overflow-wrap: break-word;
+    /*Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.binoculars:hover .binocularstext {
+    visibility: visible;
+}
+.CD {
+    position: fixed;
+    animation: CD 60s linear;
+    animation-iteration-count: infinite;
+}
+.CD .CDtext {
+    visibility: hidden;
+    width: 160px;
+    background-color: rgba(170,170,170,1);
+    color: #0f45c9;
+    margin: 0 auto;
+    padding: 2px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 10px;
+    left: 110%;
+    overflow: visible;
+    /*Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.CD:hover .CDtext {
+    visibility: visible;
+}
+.earthwindmap {
+    position: fixed;
+    animation: earthwindmap 65s linear;
+    animation-iteration-count: infinite;
+}
+.earthwindmap .earthwindmaptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: rgba(170,170,170,1);
+    color: #0f45c9;
+    margin: 0 auto;
+    padding: 2px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 10px;
+    left: 110%;
+    overflow: visible;
+    /*Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.earthwindmap:hover .earthwindmaptext {
+    visibility: visible;
+}
+.worldcam {
+    position: fixed;
+    animation: worldcam 70s linear;
+    animation-iteration-count: infinite;
+}
+.worldcam .worldcamtext {
+    visibility: hidden;
+    width: 160px;
+    background-color: rgba(170,170,170,1);
+    color: #0f45c9;
+    margin: 0 auto;
+    padding: 2px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 10px;
+    left: 110%;
+    overflow: visible;
+    /*Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.worldcam:hover .worldcamtext {
+    visibility: visible;
+}
+.radio {
+    position: fixed;
+    animation: radio 92s linear;
+    animation-iteration-count: infinite;
+}
+.radio .radiotext {
+    visibility: hidden;
+    width: 160px;
+    background-color: rgba(170,170,170,1);
+    color: #0f45c9;
+    margin: 0 auto;
+    padding: 2px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 10px;
+    left: 110%;
+    overflow: visible;
+    /*Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.radio:hover .radiotext {
+    visibility: visible;
+}
+.birdmigration {
+    position: fixed;
+    animation: birdmigration 55s linear;
+    animation-iteration-count: infinite;
+}
+.birdmigration .birdmigrationtext {
+    visibility: hidden;
+    width: 160px;
+    background-color: rgba(170,170,170,1);
+    color: #0f45c9;
+    margin: 0 auto;
+    padding: 2px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 10px;
+    left: 110%;
+    overflow: visible;
+    /*Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.birdmigration:hover .birdmigrationtext {
+    visibility: visible;
+}
+.tonegen {
+    position: fixed;
+    animation: tonegen 35s linear;
+    animation-iteration-count: infinite;
+}
+.tonegen .tonegentext {
+    visibility: hidden;
+    width: 160px;
+    background-color: rgba(170,170,170,1);
+    color: #0f45c9;
+    margin: 0 auto;
+    padding: 2px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 10px;
+    left: 110%;
+    overflow: visible;
+    /*Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.tonegen:hover .tonegentext {
+    visibility: visible;
+}
+.marpi {
+    position: fixed;
+    animation: marpi 50s linear;
+    animation-iteration-count: infinite;
+}
+.marpisize {
+    size: 150%;
+}
+.marpi .marpitext {
+    visibility: hidden;
+    width: 160px;
+    background-color: rgba(170,170,170,1);
+    color: #0f45c9;
+    margin: 0 auto;
+    padding: 2px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 10px;
+    left: 110%;
+    overflow: visible;
+    /*Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.marpi:hover .marpitext {
+    visibility: visible;
+}
+.isitdark {
+    position: fixed;
+    animation: isitdark 62s linear;
+    animation-iteration-count: infinite;
+}
+.bulb {
+    max-height: 100px;
+}
+.isitdark .isitdarktext {
+    visibility: hidden;
+    width: 160px;
+    background-color: rgba(170,170,170,1);
+    color: #0f45c9;
+    margin: 0 auto;
+    padding: 2px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 10px;
+    left: 110%;
+    overflow: visible;
+    /*Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.isitdark:hover .isitdarktext {
+    visibility: visible;
+}
+.coffee {
+    position: fixed;
+    animation: coffee 49s linear;
+    animation-iteration-count: infinite;
+}
+.coffee .coffeetext {
+    visibility: hidden;
+    width: 160px;
+    background-color: rgba(170,170,170,1);
+    color: #0f45c9;
+    margin: 0 auto;
+    padding: 2px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 10px;
+    left: 110%;
+    overflow: visible;
+    /*Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.coffee:hover .coffeetext {
+    visibility: visible;
+}
+.googleearth {
+    position: fixed;
+    animation: googleearth 60s linear;
+    animation-iteration-count: infinite;
+}
+.googleearthicon {
+    max-height: 80px;
+}
+.googleearth .googleearthtext {
+    visibility: hidden;
+    width: 160px;
+    background-color: rgba(170,170,170,1);
+    color: #0f45c9;
+    margin: 0 auto;
+    padding: 2px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 10px;
+    left: 110%;
+    overflow: visible;
+    /*Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.googleearth:hover .googleearthtext {
+    visibility: visible;
+}
+.gushcam {
+    position: fixed;
+    animation: gushcam 56s linear;
+    animation-iteration-count: infinite;
+}
+.gushcam .gushcamtext {
+    visibility: hidden;
+    width: 160px;
+    background-color: rgba(170,170,170,1);
+    color: #0f45c9;
+    margin: 0 auto;
+    padding: 2px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 10px;
+    left: 110%;
+    overflow: visible;
+    /*Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.gushcam:hover .gushcamtext {
+    visibility: visible;
+}
+.about {
+    background-color: #82f74f;
+    font-size: 11px;
+    text-align: justify;
+    width: 100%;
+    position: fixed;
+    padding: 5px 20px 5px 5px;
+    bottom: 0px;
+}
+.sanctuaries {
+    position: fixed;
+    animation: sanctuaries 43s linear;
+    animation-iteration-count: infinite;
+}
+.sanctuaries .sanctuariestext {
+    visibility: hidden;
+    width: 160px;
+    background-color: rgba(170,170,170,1);
+    color: #0f45c9;
+    margin: 0 auto;
+    padding: 2px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 10px;
+    left: 110%;
+    overflow: visible;
+    /*Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.sanctuaries:hover .sanctuariestext {
+    visibility: visible;
+}
+.soundcamp {
+    position: fixed;
+    animation: soundcamp 55s linear;
+    animation-iteration-count: infinite;
+}
+.soundcamp .soundcamptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: rgba(170,170,170,1);
+    color: #0f45c9;
+    margin: 0 auto;
+    padding: 2px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 10px;
+    left: 110%;
+    overflow: visible;
+    /*Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.soundcamp:hover .soundcamptext {
+    visibility: visible;
+}
+.atomictree {
+    position: fixed;
+    animation: atomictree 61s linear;
+    animation-iteration-count: infinite;
+}
+.atomictree .atomictreetext {
+    visibility: hidden;
+    width: 160px;
+    background-color: rgba(170,170,170,1);
+    color: #0f45c9;
+    margin: 0 auto;
+    padding: 2px;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 10px;
+    left: 110%;
+    overflow: visible;
+    /*Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.atomictree:hover .atomictreetext {
+    visibility: visible;
+}
+@keyframes earthday {
+    0%   {top: 8%; right: 10%;}
+    25%  {top: 8%; right: 20%;}
+    50%  {top: 8%; right: 30%;}
+    75%  {top: 8%; right: 20%;}
+    100% {top: 8%; right: 10%;}
+}
+@keyframes bunkerstream {
+    0%   {top: 10%; left: 35%;}
+    25%  {top: 40%; left: 10%;}
+    50%  {top: 31%; left: 26%;}
+    75%  {top: 12%; left: 41%;}
+    100% {top: 10%; left: 35%;}
+}
+@keyframes clubquarantaene {
+    0%   {top: 0%; right: 70%;}
+    25%  {top: 13%; right: 60%;}
+    50%  {top: 26%; right: 46%;}
+    75%  {top: 15%; right: 58%;}
+    100% {top: 0%; right: 70%;}
+}
+@keyframes binoculars {
+    0%   {top: 60%; left: 3%;}
+    25%  {top: 47%; left: 30%;}
+    50%  {top: 32%; left: 64%;}
+    75%  {top: 47%; left: 77%;}
+    100% {top: 60%; left: 3%;}
+}
+@keyframes CD {
+    0%   {top: 19%; left: 61%;}
+    25%  {top: 6%; left: 46%;}
+    50%  {top: 3%; left: 34%;}
+    75%  {top: 70%; left: 42%;}
+    100% {top: 19%; left: 61%;}
+}
+@keyframes earthwindmap {
+    0%   {top: 51%; left: 72%;}
+    25%  {top: 17%; left: 84%;}
+    50%  {top: 23%; left: 76%;}
+    75%  {top: 43%; left: 65%;}
+    100% {top: 51%; left: 72%;}
+}
+@keyframes worldcam {
+    0%   {top: 45%; left: 31%;}
+    25%  {top: 54%; left: 90%;}
+    50%  {top: 22%; left: 74%;}
+    75%  {top: 31%; left: 63%;}
+    100% {top: 45%; left: 31%;}
+}
+@keyframes radio {
+    0%   {top: 22%; left: 17%;}
+    25%  {top: 39%; left: 0%;}
+    50%  {top: 42%; left:32%;}
+    75%  {top: 50%; left: 53%}
+    100% {top: 22%; left: 17%;}
+}
+@keyframes birdmigration {
+    0%   {top: 41%; left: 87%;}
+    25%  {top: 66%; left: 71%;}
+    50% {top: 51%; left: 61%;}
+    75%  {top: 32%; left: 77%;}
+    100% {top: 41%; left:70%;}
+}
+@keyframes tonegen {
+    0%   {top: 5%; left: 5%;}
+    15%  {top: 15%; left: 25%;}
+    30%  {top: 5%; left: 45%;}
+    45% {top: 15%; left: 65%;}
+    60%  {top: 5%; left: 45%;}
+    75% {top: 15%; left: 25%}
+    90% {top: 5%; left: 5%;}
+}
+@keyframes marpi {
+    0%   {top: 2%; left: 2%;}
+    25%  {top: 45%; left: 2%;}
+    50%  {top: 45%; left: 25%;}
+    75%  {top: 2%; left: 25%;}
+    100% {top: 2%; left: 2%;}
+}
+@keyframes isitdark {
+    0%   {top: 16%; left: 92%;}
+    25%  {top: 31%; left: 73%;}
+    50%  {top: 60%; left: 62%;}
+    75%  {top: 29%; left: 78%;}
+    100% {top: 16%; left: 92%;}
+}
+@keyframes coffee {
+    0%   {top: 34%; left: 70%;}
+    25%  {top: 17%; left: 89%;}
+    50%  {top: 37%; left: 72%;}
+    75%  {top: 12%; left: 58%;}
+    100% {top: 34%; left: 70%;}
+}
+@keyframes googleearth {
+    0%   {top: 21%; left: 30%;}
+    25%  {top: 41%; left: 26%}
+    50%  {top: 26; left: 31%;}
+    75%  {top: 12%; left: 52%;}
+    100% {top: 21%; left: 30%;}
+}
+@keyframes gushcam {
+    0%   {top: 44%; left: 46.4%;}
+    25%  {top: 33.3%; left: 58%;}
+    50%  {top: 26%; left: 45%;}
+    75%  {top: 13%; left: 52%}
+    100% {top: 44%; left: 46%}
+}
+@keyframes sanctuaries {
+    0%   {top: 54%; left: 9%;}
+    25%  {top: 17%; left: 24%;}
+    50%  {top: 34%; left: 61%;}
+    75%  {top: 46%; left: 34%;}
+    100% {top: 54%; left: 9%;}
+}
+@keyframes soundcamp {
+    0%   {top: 34.8%; left: 62%;}
+    25%  {top: 45.9%; left: 58.1%;}
+    50%  {top: 37.6%; left: 70.9%;}
+    75%  {top: 23.2%; left: 52.7%;}
+    100% {top: 34.8%; left: 62%;}
+}
+@keyframes atomictree {
+    0%   {top: 39%; left: 27%;}
+    25%  {top: 59%; left: 67%;}
+    50%  {top: 23%; left: 70.9%;}
+    75%  {top: 46%; left: 52.7%;}
+    100% {top: 39%; left: 27%;}
+}
+@media (max-width: 800px) {
+    .icon {
+        max-width: 80px;
+    }
+    .about {
+        font-size: 8px;
+    }
+}
+@media only screen and (max-width: 400px) {
+.about {display:none;}
+}
