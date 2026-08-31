@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact</title>
+    <meta name="description" content="Alexander Powers is a dancer and musician." />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site">
+      <div class="wrap">
+        <p class="site-title"><a href="index.html">Alexander Powers</a></p>
+        <nav class="site" aria-label="Primary">
+          <a href="index.html">Bio/CV</a>
+          <a href="music/index.html">Music</a>
+          <a href="dance/index.html">Dance</a>
+          <a href="contact.html" aria-current="page">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <h1>Contact</h1>
+      <div id="contact-content" class="state">Loading&hellip;</div>
+    </main>
+
+    <footer class="site">
+      <div class="wrap">&copy; <span id="year"></span> Alexander Powers</div>
+    </footer>
+
+    <script src="js/sanity.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      Sanity.fetchQuery('*[_type == "contact"][0]{content}')
+        .then(function (contact) {
+          var el = document.getElementById("contact-content");
+
+          if (!contact || !contact.content || !contact.content.length) {
+            el.textContent = "Contact details coming soon.";
+            return;
+          }
+
+          el.classList.remove("state");
+          el.innerHTML = Sanity.renderPortableText(contact.content);
+        })
+        .catch(function (err) {
+          document.getElementById("contact-content").textContent =
+            "Unable to load content right now.";
+          console.error(err);
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dance</title>
+    <meta
+      name="description"
+      content="Alexander Powers is a dancer and musician."
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="site">
+      <div class="wrap">
+        <p class="site-title"><a href="../index.html">Alexander Powers</a></p>
+        <nav class="site" aria-label="Primary">
+          <a href="../index.html">Bio/CV</a>
+          <a href="../music/index.html">Music</a>
+          <a href="index.html" aria-current="page">Dance</a>
+          <a href="../contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <h1>Dance work</h1>
+      <div id="works" class="state">Loading&hellip;</div>
+    </main>
+
+    <footer class="site">
+      <div class="wrap">&copy; <span id="year"></span> Alexander Powers</div>
+    </footer>
+
+    <script src="../js/sanity.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      var groq =
+        '*[_type == "danceWork"] | order(date desc){_id, title, date, content}';
+      Sanity.fetchQuery(groq)
+        .then(function (works) {
+          var el = document.getElementById("works");
+
+          if (!works || !works.length) {
+            el.textContent = "No works published yet.";
+            return;
+          }
+
+          el.classList.remove("state");
+          el.innerHTML =
+            '<div class="works-layout">' +
+            '<nav class="works-list" aria-label="Dance works"></nav>' +
+            '<div class="work-detail"></div>' +
+            "</div>";
+
+          var listEl = el.querySelector(".works-list");
+          var detailEl = el.querySelector(".work-detail");
+
+          function renderDetail(work) {
+            var date = work.date
+              ? '<p class="work-date">' +
+                new Date(work.date + "T00:00:00").toLocaleDateString(
+                  undefined,
+                  { year: "numeric", month: "long" },
+                ) +
+                "</p>"
+              : "";
+            var content = Sanity.renderPortableText(work.content);
+            detailEl.innerHTML =
+              '<h2 class="work-title">' +
+              Sanity.escapeHtml(work.title) +
+              "</h2>" +
+              date +
+              content;
+          }
+
+          var requestedId = decodeURIComponent(location.hash.replace(/^#/, ""));
+          var initialWork =
+            works.find(function (w) {
+              return w._id === requestedId;
+            }) || works[0];
+
+          works.forEach(function (work) {
+            var btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "work-list-item";
+            btn.textContent = work.title;
+            if (work._id === initialWork._id) {
+              btn.setAttribute("aria-current", "true");
+            }
+            btn.addEventListener("click", function () {
+              listEl.querySelectorAll(".work-list-item").forEach(function (b) {
+                b.removeAttribute("aria-current");
+              });
+              btn.setAttribute("aria-current", "true");
+              renderDetail(work);
+              history.replaceState(
+                null,
+                "",
+                "#" + encodeURIComponent(work._id),
+              );
+            });
+            listEl.appendChild(btn);
+          });
+
+          renderDetail(initialWork);
+        })
+        .catch(function (err) {
+          document.getElementById("works").textContent =
+            "Unable to load content right now.";
+          console.error(err);
+        });
+    </script>
+  </body>
+</html>
